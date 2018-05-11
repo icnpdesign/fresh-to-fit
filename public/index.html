@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Fresh to Fit</title>
+  <meta content="Isabelle" name="author">
+  <link href="styles/style.css" rel="stylesheet">
+</head>
+<!-- BODY STARTS-->
+
+
+<body class="headerImg">
+  <!-- NAV BAR-->
+
+
+  <nav id="mainNavigation">
+    <ul>
+      <li>
+        <a href="index.html"><img alt="Lightning Bolt Logo" src="images/logo.png" style="width:60px;"></a>
+      </li>
+
+
+      <li class="pushItem">
+        <a href="#" target="_blank">About</a>
+      </li>
+
+
+      <li>
+        <a href="https://drive.google.com/file/d/1mLbOBkfRvPsFc6iFc0uE0bHX0iY6EVTi/view?usp=sharing" target="_blank">Proposal</a>
+      </li>
+
+
+      <li>
+        <a href="https://docs.google.com/document/d/11pyIB7qSSum7KbjBMSgpKuEFZ46CdYspo8KR_0Lorzg/edit?usp=sharing" target="_blank">UX Report</a>
+      </li>
+
+
+      <li>
+        <a href="https://docs.google.com/presentation/d/1dn_a1VuMZZOhk_M-DKSRsh20pq4fbDUf6QThqHWhFMw/edit?usp=sharing" target="_blank">Presentation</a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <header>
+    <!-- INTRO TEXT-->
+
+
+    <div class="introduction">
+      <h1 class="upper">Fresh to Fit</h1>
+
+
+      <h3 class="upper">A busy college student's guide to fitness and nutrition</h3>
+
+
+      <p>Healthy isn't juice cleanses and yoga classes. Learn what it's <em>really</em> about.</p>
+    </div>
+
+
+    <div class="switchFunction">
+      <button class="switcher"><a class="upper" href="index.html#nutrition">Nutrition</a></button> <button class="switcher"><a class="upper" href="index.html#exercise">Exercise</a></button>
+    </div>
+  </header>
+  <!-- NUTRITION SECTION -->
+
+
+  <section id="nutrition">
+    <h1 class="upper center white">Nutrition</h1>
+
+<head>
+
+    <h3 class="center white">First step: Calculate your macros!</h3>
+
+
+    <p class="center white">All of these numbers and acronyms may seem intimidating at first, but don't worry! </p> 
+    <p class="center white">We'll explain everything after we find out what those numbers are for you.</p>
+
+    <div class="flipWrapper">
+      <div class="card">
+        <div class="face front">
+          <form class="nutrition-form" id="nutritionForm" name="nutritionForm">
+            <!-- UNIT RADIO BUTTONS-->
+
+
+            <p class="center thick">Enter in your details below and we'll do the rest!</p>
+
+
+            <div class="units center">
+              <input id="unitsMetric" name="units" type="radio" value="metric"> <label class="center" for="unitsMetric">Metric</label> <input id="unitsImperial" name="units" type="radio" value="imperial"> <label class="center" for="unitsImperial">Imperial</label>
+            </div>
+            <!-- SEX RADIO BUTTONS-->
+
+
+            <div class="numberInputs">
+            </div>
+
+
+            <table class="nutrition-table">
+              <tbody>
+                <tr>
+                  <td class="right thick">Sex</td>
+
+                  <td>
+                    <div id="sex">
+                      <input id="sexFemale" name="sex" type="radio" value="female"> <label for="sexFemale">Female</label> <input id="sexMale" name="sex" type="radio" value="male"> <label for="sexMale">Male</label>
+                    </div>
+                  </td>
+                </tr>
+                <!-- AGE, HEIGHT, WEIGHT INPUTS-->
+
+
+                <tr>
+                  <td class="right thick">Age</td>
+
+                  <td>
+                    <div class="age">
+                      <input id="age" name="age" placeholder="Years" required="" type="number">
+                    </div>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td class="right thick">Height</td>
+
+                  <td>
+                    <div id="height">
+                      <input class="small-input" name="height" placeholder="Feet" required="" type="number"> <input class="small-input" name="height" placeholder="Inches" required="" type="number">
+                    </div>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td class="right thick">Weight</td>
+
+                  <td>
+                    <div id="weight">
+                      <input name="weight" placeholder="Pounds" required="" type="number">
+                    </div>
+                  </td>
+                </tr>
+                <!-- ACTIVITY LEVEL INPUTS-->
+
+
+                <tr>
+                  <td class="right thick">Activity Level</td>
+
+                  <td>
+                    <div class="activityLevel">
+                      <select id="activityLevel">
+                        <option selected value="1.2">
+                          Sedentary (Office Job)
+                        </option>
+
+                        <option value="1.375">
+                          Light Exercise (1-2 days/week)
+                        </option>
+
+                        <option value="1.55">
+                          Moderate Exercise (3-5 days/week)
+                        </option>
+
+                        <option value="1.725">
+                          Heavy Exercise (6-7 days/week)
+                        </option>
+
+                        <option value="1.9">
+                          Athlete (2x a day)
+                        </option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <input class="center submit-btn" id="nutritionSubmit" type="submit" value="Submit">
+          </form>
+        </div>
+        <!-- BACK SIDE-->
+
+
+        <div class="face back">
+          <div class="nutrition-results">
+            <h2 class="center thick">Here are your results!</h2>
+
+
+            <table id="nutritionResults">
+              <tbody>
+                <tr>
+                  <td>
+                    <p class="right thick">BMR</p>
+                  </td>
+
+                  <td>
+                    <p class="resultBMR">000 Calories</p>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td>
+                    <p class="right thick">TDEE</p>
+                  </td>
+
+                  <td>
+                    <p class="resultTDEE">000 Calories</p>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td>
+                    <p class="right thick">Protein</p>
+                  </td>
+
+                  <td>
+                    <p class="resultProtein">000 Grams</p>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td>
+                    <p class="right thick">Carbohydrates</p>
+                  </td>
+
+                  <td>
+                    <p class="resultCarbs">000 Grams</p>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td>
+                    <p class="right thick">Fats</p>
+                  </td>
+
+                  <td>
+                    <p class="resultFats">000 Grams</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <h4 class="center">Scroll down to learn what this means</h4>
+            <p class="center disclaimer">Disclaimer: these are recommendations only. Please speak with a professional if you have dietary restrictions or health conditions that may be affected by diet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nutrition-copy">
+      <div class="white-card small-width">
+        <h2 class="orange">BMR</h2>
+      <p>BMR stands for your basal metabolic rate. In simple terms, it means how much energy your body would burn if you slept all day (I wish). It's an important baseline because your body needs at the very minimum this much to survive <em>(note: this does not mean function properly)</em>.</p>
+      </div>
+
+
+      <div class="white-card small-width">
+        <h2 class="orange">TDEE</h2>
+        <p>TDEE is your Total Daily Energy Expenditure. This is how much energy your body uses day to day, based on the level of activity you selected above. If you're maintaining your weight and are exercising regularly, you should aim to be eating this amount of calories per day.</p>
+      </div>
+
+
+      <div class="white-card small-width">
+      <h2 class="orange upper">Protein</h2>
+      <p>Proteins are the building blocks of muscle (#gainz) and prevent muscle loss during a calorie deficit. Proteins should be your go to macronutrient because it helps to control appetite and makes you feel full for longer. Especially if you're vegan or vegetarian, it's important that you get enough protein in your diet from a variety of sources.</p>
+      </div>
+
+      <div class="white-card small-width">
+        <h2 class="orange upper">Carbohydrates</h2>
+        <p>Carbohydrates are a source of energy and are stored in the liver, brain, blood, and muscles as glycogen. Make sure you're mostly eating whole grains and not processed carbs. Complex carbs also take longer to digest, so you'll be feeling full for longer. Even though low-carb diets are popular, be aware they can cause intense cravings for donuts and ice cream when you're being too restrictive.</p>
+      </div>
+
+      <div class="white-card small-width">
+      <h2 class="orange upper">Fats</h2>
+      <p>Fats have a bad rep, but they're an essential nutrient that our body needs to function. Fats help with hormone regulation, brain function, vitamin absorption, and so much more. It's important that you're consuming healthy fats such as in fish, nuts, and extra virgin olive oil while avoiding trans fats.</p>
+      </div>
+
+      <div class="white-card small-width">
+      <h2 class="orange upper">Time to Track!</h2>
+      <p>We suggest using <a href="https://www.myfitnesspal.com" target="_blank" class="text-link">MyFitnessPal</a> to track what you eat. Once you create an account, you can edit your <a href="https://www.myfitnesspal.com/account/my_goals/daily_nutrition_goals" class="text-link">goals</a> with the numbers we calculated for you. MyFitnessPal tends to underestimate the number of calories a person needs, so make sure they match your TDEE!</p>
+      </div>
+
+    </div>
+  </section>
+  <section id="exercise">
+    <h1 class="upper center white">Exercise</h1>
+
+
+    <h3 class="center white">Eat right, work hard.</h3>
+
+
+    <p class="center white low-height">Diet is extremely important, but so is exercise.</p>
+    <p class="center white low-height">It can be intimidating going to the gym, so here are some workouts for you to try.</p>
+    <p class="center white low-height">Check off each set by clicking on the circles to keep track of how much you've completed.</p>
+    
+    <div class="center button-menu">
+      <button class="fullBody exerciseBtn upper" type="button">Full Body</button>
+      <button class="backBicep exerciseBtn upper" type="button">Back and Biceps</button>
+      <button class="chestTricep exerciseBtn upper" type="button">Chest and Triceps</button>
+      <button class="legGlute exerciseBtn upper" type="button">Legs and Glutes</button>
+      <button class="shoulderAbs exerciseBtn upper" type="button">Shoulders and Abs</button>
+    </div>
+
+  <div class="exercise-card white-card center">
+    <table>
+      <tbody>
+        <tr class="table-head">
+          <th class="upper"><p>Exercise</p></th>
+          <th class="upper"><p>Set 1</p></th>
+          <th class="upper"><p>Set 2</p></th>
+          <th class="upper"><p>Set 3</p></th>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="exercise1">Barbell Deadlift</h2>
+            <p>3 sets of 8 repetitions</p>
+          </td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="exercise2">Single Arm Rows</h2>
+            <p>3 sets of 8 repetitions</p>
+          </td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="exercise3">Bicep Curls</h2>
+            <p>3 sets of 8 repetitions</p>
+          </td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="exercise4">Lat Pull Downs</h2>
+            <p>3 sets of 8 repetitions</p>
+          </td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="exercise5">Hammer Curls</h2>
+            <p>3 sets of 8 repetitions</p>
+          </td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="exercise6">Pull Ups</h2>
+            <p>3 sets of 8 repetitions</p>
+          </td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+          <td><div class="circle-set"></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+  <footer>
+    <p>Isabelle Nguyen-Phuoc | CM 523</p>
+  </footer>
+  <script src="scripts/main.js">
+  </script>
+</body>
+</html>
